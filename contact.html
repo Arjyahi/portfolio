@@ -1,0 +1,57 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Arjyahi Bhattacharya</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar sticky">
+            <div class="logo">Arjyahi Bhattacharya</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="https://formsubmit.co/arjyahi@gmail.com" method="POST">
+            <div class="form-group">
+                <div class="form-row">
+                  <div class="col">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                  </div>
+                  <div class="col">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+              </div>
+            
+            <button type="submit">Send</button>
+        </form>
+        <p>If you have any questions or would like to get in touch, feel free to reach out!</p>
+                
+        <p>Email: arjyahi@gmail.com</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/arjyahi">linkedin.com/in/arjyahi</a></p>
+        <p>GitHub: <a href="https://github.com/Arjyahi">github.com/Arjyahi</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Arjyahi Bhattacharya. All rights reserved.</p>
+    </footer>
+</body>
+</html>
