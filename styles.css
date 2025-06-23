@@ -494,7 +494,7 @@ footer {
 }
 
 /* Hamburger Styles */
-.hamburger {
+/* .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -507,10 +507,10 @@ footer {
     background: white;
     border-radius: 2px;
     transition: 0.3s ease;
-}
+} */
 
 /* Mobile Menu Styles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .navbar {
         position: relative;
     }
@@ -547,9 +547,9 @@ footer {
         flex: 1;
         text-align: left;
     }
-}
+} */
 /* Dark Mode for Mobile Menu */
-.dark-mode .nav-links {
+/* .dark-mode .nav-links {
     background: #1a1a1a;
 }
 .dark-mode .nav-links a {
@@ -563,9 +563,9 @@ footer {
 }
 .dark-mode .navbar {
     background: linear-gradient(135deg, #1a1a1a, #333);
-}
+} */
 /* Animation for Hamburger */
-.hamburger.active span:nth-child(1) {
+/* .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 .hamburger.active span:nth-child(2) {
@@ -577,7 +577,7 @@ footer {
 
 @media (max-width: 768px) {
     /* Hero section content stacking */
-    .hero {
+    /* .hero {
         flex-direction: column;
         padding: 40px 20px;
     }
@@ -598,42 +598,42 @@ footer {
     }
 
     /* Contact Info section width */
-    .contact-info {
+    /* .contact-info {
         width: 90%;
         padding: 20px;
-    }
+    } */
 
     /* Profile Picture */
-    .profile-picture img {
+    /* .profile-picture img {
         width: 120px;
         height: 120px;
-    }
+    } */
 
     /* Skills */
-    .skill-icons .skill {
+    /* .skill-icons .skill {
         width: 80px;
         padding: 10px;
-    }
+    } */
 
-    .skill-icons i {
+    /* .skill-icons i {
         font-size: 30px;
     }
 
     .skill-icons span {
         font-size: 12px;
-    }
+    } */
 
     /* Projects */
-    .project-card h3 {
+    /* .project-card h3 {
         font-size: 18px;
     }
 
     .project-card p {
         font-size: 13px;
-    }
+    } */
 
     /* Adjust buttons */
-    .page-buttons {
+    /* .page-buttons {
         flex-direction: column;
         gap: 10px;
     }
@@ -641,16 +641,16 @@ footer {
     .page-buttons a {
         width: 80%;
         margin: 0 auto;
-    }
-}
-.nav-links {
+    } */
+
+/* .nav-links {
     transition: all 0.3s ease-in-out;
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
-}
+} */
 
-.nav-links.active {
+/* .nav-links.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -666,25 +666,25 @@ footer {
 }
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-}
+} */ 
 /* Smooth scrolling for anchor links */
-html {
+/* html {
     scroll-behavior: smooth;
-}   
+}    */
 /* Additional hover effects for buttons */
-.cta-button:hover { 
+/* .cta-button:hover { 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 .page-buttons a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
+} */
 /* Subtle animations for sections */
-section {
+/* section {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s forwards;
-}   
-section:nth-of-type(1) {
+}    */
+/* section:nth-of-type(1) {
     animation-delay: 0.1s;
 }
 section:nth-of-type(2) {
@@ -698,9 +698,9 @@ section:nth-of-type(3) {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 /* Dark mode toggle button */
-.dark-mode-toggle {
+/* .dark-mode-toggle {
     background: none;
     border: none;
     color: inherit;
@@ -711,20 +711,20 @@ section:nth-of-type(3) {
 }
 .dark-mode-toggle:hover {
     color: #ffdd57;
-}
+} */
 /* Accessibility: Focus styles */
-a:focus, button:focus {
+/* a:focus, button:focus {
     outline: 2px dashed #ffdd57;
     outline-offset: 2px;
-}
+} */
 
 /* Reduced motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+/* @media (prefers-reduced-motion: reduce) { */
+    /* *, *::before, *::after {
         animation-duration: 0.001s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.001s !important;
         scroll-behavior: auto !important;
     }
-}
+} */
 /* End of styles.css */
