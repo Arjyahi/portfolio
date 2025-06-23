@@ -21,10 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.reset();
     });
 
-    // const hamburger = document.getElementById('hamburger');
-    // hamburger.addEventListener('click', () => {
-    //     const navLinks = document.querySelector('.nav-links');
-    //     navLinks.classList.toggle('active');
-    // });
+    
 });
-
