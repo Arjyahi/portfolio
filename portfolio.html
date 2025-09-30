@@ -27,27 +27,45 @@
         <h3>Machine Learning, Deep Learning, & AI</h3>
         <div class="project-grid">
             <div class="project-card">
+                <h3>Multimodal Recommender System - (Ongoing, 2025):</h3>
+                <p>Designing a Pinterest-inspired production recommender combining collaborative filtering with multimodal embeddings (text + image, NLP + CV). Building an end-to-end ML pipeline with MLflow (experiment tracking), FastAPI + Docker (deployment), and Evidently AI (drift monitoring). Evaluating recommendations using ranking metrics: Precision@10, Recall@10, and NDCG, calculating gains in relevance and ranking quality in simulated workloads.</p>
+                <div class="tags"><span>Python</span><span>Deep Learning</span><span>NLP</span><span>Computer vision</span><span>Neural Networks</span></div>
+                <p><a href="" target="_blank">Link</a></p>
+            </div>
+            <div class="project-card">
+                <h3>Optimizing Scalable ML Training Pipelines (Ongoing, 2025)</h3>
+                <p>Evaluating and optimizing data ingestion frameworks (PyTorch DataLoader, tf.data, Cedar, PySpark) across multiple storage formats (CSV, Parquet, TFRecord). Containerizing experiments with Docker and tracked metrics in MLflow; analyzing throughput, GPU utilization, and proposing optimizations (prefetching, caching, adaptive batching) to improve training efficiency.</p>
+                <div class="tags"><span>Python</span><span>Deep Learning</span><span>Machine Learning</span><span>Systems for ML</span></div>
+                <p><a href="" target="_blank">Link</a></p>
+            </div>
+            <div class="project-card">
                 <h3>Multimodal Zero-Shot Learning for Unseen Concepts - 2025</h3>
-                <p>Designed a knowledge graph-based GCN model integrating CLIP text embeddings with semantic predicate-level relationships (including contrastive ones) to classify images without labeled training data; incorporated attention-based edge features and a custom prototype refinement loss and an MLP-based classifier head for final prediction.</p>
+                <p>Engineered a knowledge graph-based R-GCN model integrating CLIP embeddings with relational and contrast predicates, attention-based edges, and a prototype refinement loss + MLP classifier head for semantic alignment and prediction, trained on multi-GPU setup. Outperformed CLIP baseline by +23% Top-1 accuracy (59% vs. 36%) and improved F1-score by +13% on AWA2 dataset, demonstrating expertise in graph neural networks, zero-shot learning, and multimodal AI.</p>
                 <div class="tags"><span>Python</span><span>Deep Learning</span><span>Neural Networks</span></div>
                 <p><a href="https://github.com/Arjyahi/CLIP-KG-ZSL" target="_blank">Link</a></p>
             </div>
             <div class="project-card">
+                <h3>AI Resume Screening Agent - 2025</h3>
+                <p>Engineered an end-to-end n8n + Gemini AI pipeline to parse resumes, extract candidate attributes (skills, education, projects, experience), auto-score fit against role criteria, and generate improvement recommendations (e.g., missing skills, projects for MLE/MAANG roles). Designed for real-time (<1 min) evaluation and scalable HR deployment via Google Sheets/Drive.</p>
+                <div class="tags"><span>n8n</span><span>Agentic AI</span><span>Prompt Engineering</span><span>Generative AI</span></div>
+                <p><a href="" target="_blank">Link</a></p>
+            </div>
+            <div class="project-card">
                 <h3>Reinforcement Learning for Abstractive Summarization - 2025</h3>
-                <p>Designed a custom LSTM-based attention model for abstractive summarization on domain-specific dialogues (SAMSum dataset). Integrated reinforcement learning techniques (SCST, PPO) to improve fluency and context retention. Developed a modular training pipeline with a custom tokenizer and lightweight RL wrapper, no transformers required. Achieved 5.42% BLEU score improvement using PPO, with <3-hour training on modest hardware.</p>
+                <p>Developed a lightweight LSTM-based attention model with a custom tokenizer for dialogue summarization on SAMSum dataset; integrated a modular RL wrapper using SCST and PPO, improving BLEU by +5.42% over baseline without pretrained transformers, showcasing expertise in sequence modeling, RL-based NLP optimization, and low-resource architectures.</p>
                 <div class="tags"><span>Python</span><span>Deep Learning</span><span>Neural Networks</span><span>Reinforcement Learning</span><span>Natural Language Processing</span></div>
                 <p><a href="https://github.com/Arjyahi/RL-Training-Text-Summarization" target="_blank">Link</a></p>
             </div>
             <div class="project-card">
                 <h3>RePosture AI – 3rd Place, T9Hacks 2025</h3>
-                <p>AI-powered posture correction tool using computer vision, ML, and real-time feedback algorithms.</p>
-                <div class="tags"><span>Python</span><span>OpenCV</span><span>Mediapipe</span><span>TensorFlow</span><span>Streamlit</span></div>
+                <p>3rd place (AI Track, 24hr hackathon) by developing an AI-driven ergonomic posture correction tool. Implemented human pose estimation (MediaPipe + OpenCV) with a CNN-based posture classifier, deployed on a Streamlit app with Gemini API backend for real-time feedback (<100ms latency). End-to-end ML system design from model development, deployment and UI.</p>
+                <div class="tags"><span>Python</span><span>OpenCV</span><span>Mediapipe</span><span>Streamlit</span></div>
                 <p><a href="https://devpost.com/software/reposture-ai/" target="_blank">Link</a></p>
 
             </div>
             <div class="project-card">
                 <h3>LinkedIn Job Market Analysis</h3>
-                <p>Developed a job market forecasting tool applying ML models for trend analysis and skill demand insights.</p>
+                <p>Built an end-to-end job market forecasting and recommendation platform using LinkedIn data, combining TF-IDF + ANN for job matching (95% accuracy), ARIMA for demand forecasting (±7% error), and a dynamic data cube for multidimensional analytics (by role, location, and industry). Generated real-time statistical insights into skills gaps, salary trends, and remote work adoption across tech and healthcare sectors using rigorous modeling and hypothesis testing.</p>
                 <div class="tags"><span>Python</span><span>Time Series</span><span>Clustering</span><span>Recommendation</span></div>
                 <p><a href="https://github.com/charithcherry/Linkedin-Job-Market-Analysis-using-ML" class="github-link">Link</a></p>
             </div>
@@ -79,7 +97,7 @@
             </div>
             <div class="project-card">
                 <h3>NOAA Storm Database Analysis</h3>
-                <p>Performed EDA on storm data using statistical modeling and data visualization.</p>
+                <p> Performed exploratory and time-series analysis on NOAA severe weather data using R; quantified health and economic impacts, revealing storm categories with the highest long-term costs and informing mitigation strategies.</p>
                 <div class="tags"><span>R</span><span>ggplot2</span><span>dplyr</span></div>
                 <p><a href="https://rpubs.com/Arjyahi/779341" class="github-link">Link</a></p>
             </div>
@@ -99,7 +117,7 @@
         <div class="project-grid">
             <div class="project-card">
                 <h3>CNN-based Cognitive Distraction Surveillance for Pedestrians using Phones and Headphones</h3>
-                <p>Research paper on using convolutional neural networks to detect pedestrian distractions for improved safety.</p>
+                <p>Co-authored an IEEE-published study designing a ResNet-50 CNN to detect pedestrians distracted by phones or headphones, achieving 91.43% validation accuracy; implemented and evaluated on real-world photo data, demonstrating practical computer vision expertise in urban safety monitoring.</p>
                 <p><strong>Published in:</strong> 2023 International Conference on Control, Communication and Computing (ICCC)</p>
                 <p><strong>DOI:</strong> <a href="https://doi.org/10.1109/ICCC57789.2023.10165546" target="_blank">10.1109/ICCC57789.2023.10165546</a></p>
             </div>
