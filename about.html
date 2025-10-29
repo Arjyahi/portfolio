@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Arjyahi Bhattacharya</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar sticky">
             <div class="logo">Arjyahi Bhattacharya</div>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -20,21 +24,20 @@
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><button id="theme-toggle">Dark Mode</button></li>
+                <li><button id="theme-toggle" aria-label="Switch theme">🌙</button></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
     
     <section class="about">
         <section id="about">
-            <div class="card">
-                <h2>About Me</h2>
-                <p>
+            <div class="about-intro card">
+                <div class="about-photo">
+                    <img src="images/profile.jpg" alt="Arjyahi Bhattacharya" loading="lazy" decoding="async">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>
                 I’m a <strong>Master’s student in Computer Science at the University of Colorado Boulder</strong>, specializing in 
                 <strong>Artificial Intelligence, Machine Learning, and Data Science</strong>. My journey from a civil engineering undergrad to AI/ML research 
                 reflects my passion for <strong>using technology to solve real-world problems</strong>.
@@ -57,6 +60,7 @@
                 I’m actively seeking opportunities to apply my skills in <strong>AI/ML engineering, applied ML, and data-driven product development</strong>, 
                 while continuing to learn, experiment, and build systems that serve people and the planet.
                 </p>
+                </div>
             </div>
     
             <div class="card">

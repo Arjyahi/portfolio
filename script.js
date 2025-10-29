@@ -1,21 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
+
+  // THEME: system-detect + toggle + persist
   const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+  if (initialDark) body.classList.add('dark-mode');
 
-  // Determine initial theme: saved preference or system preference
-  const saved = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const shouldUseDark = saved ? saved === 'dark' : systemPrefersDark;
-  if (shouldUseDark) body.classList.add('dark-mode');
-
-  // Update toggle label
   const setToggleLabel = () => {
     if (!themeToggle) return;
-    themeToggle.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    const dark = body.classList.contains('dark-mode');
+    themeToggle.textContent = dark ? '☀' : '🌙';
+    themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeToggle.setAttribute('aria-pressed', String(dark));
   };
   setToggleLabel();
 
-  // Toggle theme
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
@@ -23,16 +24,63 @@ document.addEventListener('DOMContentLoaded', () => {
       setToggleLabel();
     });
   }
-
-  // Optional: react to OS theme changes if user hasn't explicitly chosen
-  if (!saved && window.matchMedia) {
+  if (!savedTheme && window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (e.matches) body.classList.add('dark-mode'); else body.classList.remove('dark-mode');
+      body.classList.toggle('dark-mode', e.matches);
       setToggleLabel();
     });
   }
 
-  // Contact Form Submission (only on contact page)
+  // NAV: mobile hamburger toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      const expanded = navLinks.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', String(expanded));
+    });
+  }
+
+  // NAV: add scrolled state for blur + shadow
+  const navbar = document.querySelector('.navbar');
+  const onScrollNav = () => {
+    if (!navbar) return;
+    if (window.scrollY > 8) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+  };
+  onScrollNav();
+  window.addEventListener('scroll', onScrollNav, { passive: true });
+
+  // FADE-UP animations for sections and cards
+  const observed = Array.from(document.querySelectorAll('section, .card, .project-card, .job, .degree'));
+  observed.forEach(el => el.classList.add('fade-up'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  observed.forEach(el => io.observe(el));
+
+  // SCROLL TO TOP button
+  const makeScrollTop = () => {
+    const btn = document.createElement('button');
+    btn.className = 'scroll-to-top';
+    btn.setAttribute('aria-label', 'Scroll to top');
+    btn.innerHTML = '↑';
+    document.body.appendChild(btn);
+    const toggleBtn = () => {
+      if (window.scrollY > 600) btn.classList.add('show'); else btn.classList.remove('show');
+    };
+    toggleBtn();
+    window.addEventListener('scroll', toggleBtn, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  };
+  makeScrollTop();
+
+  // CONTACT: safe submission UX only on contact page
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (event) => {
