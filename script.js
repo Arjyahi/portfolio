@@ -8,10 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialDark = savedTheme ? savedTheme === 'dark' : prefersDark;
   if (initialDark) body.classList.add('dark-mode');
 
+  const sunIcon = '\u2600'; // sun symbol
+  const moonIcon = '\u{1F319}'; // crescent moon
+
   const setToggleLabel = () => {
     if (!themeToggle) return;
     const dark = body.classList.contains('dark-mode');
-    themeToggle.textContent = dark ? '☀' : '🌙';
+    themeToggle.textContent = dark ? sunIcon : moonIcon;
     themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     themeToggle.setAttribute('aria-pressed', String(dark));
   };
@@ -40,6 +43,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const expanded = navLinks.classList.contains('active');
       menuToggle.setAttribute('aria-expanded', String(expanded));
     });
+
+    const closeMenu = () => {
+      if (!navLinks.classList.contains('active')) return;
+      navLinks.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    navLinks.addEventListener('click', (event) => {
+      const target = event.target.closest('a');
+      if (!target) return;
+
+      const sectionSelector = target.dataset.section;
+      if (sectionSelector) {
+        const currentPath = window.location.pathname.replace(/\/index\.html$/, '/');
+        const targetPath = new URL(target.href).pathname.replace(/\/index\.html$/, '/');
+        if (currentPath === targetPath) {
+          event.preventDefault();
+          const sectionEl = document.querySelector(sectionSelector);
+          if (sectionEl) {
+            sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+
+      closeMenu();
+    });
   }
 
   // NAV: add scrolled state for blur + shadow
@@ -54,15 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // FADE-UP animations for sections and cards
   const observed = Array.from(document.querySelectorAll('section, .card, .project-card, .job, .degree'));
   observed.forEach(el => el.classList.add('fade-up'));
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  observed.forEach(el => io.observe(el));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0 });
+    observed.forEach(el => io.observe(el));
+  } else {
+    observed.forEach(el => el.classList.add('visible'));
+  }
 
   // SCROLL TO TOP button
   const makeScrollTop = () => {
